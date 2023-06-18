@@ -1,0 +1,9 @@
+{
+	"name": "df-huy-project",
+	"location": "eastus2",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "25ca9251-c240-4af5-a6ab-74394949a6d3",
+		"tenantId": "f01e930a-b52e-42b1-b70f-a8882b5d043b"
+	}
+}

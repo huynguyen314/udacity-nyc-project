@@ -1,0 +1,52 @@
+{
+	"name": "Pipeline Load Aggregate Payroll Data",
+	"properties": {
+		"activities": [
+			{
+				"name": "Load Aggregate Payroll Data",
+				"type": "ExecuteDataFlow",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"dataflow": {
+						"referenceName": "Dataflow Aggregate Data",
+						"type": "DataFlowReference",
+						"parameters": {
+							"dataflow_param_fiscalyear": {
+								"value": "@pipeline().parameters.global_param_fiscalyear",
+								"type": "Expression"
+							}
+						}
+					},
+					"staging": {
+						"linkedService": {
+							"referenceName": "dfAzureDataLakeGen2",
+							"type": "LinkedServiceReference"
+						},
+						"folderPath": "adlsnycpayroll-huy-lastintial/dirstaging"
+					},
+					"compute": {
+						"coreCount": 8,
+						"computeType": "General"
+					},
+					"traceLevel": "Fine"
+				}
+			}
+		],
+		"parameters": {
+			"global_param_fiscalyear": {
+				"type": "int"
+			}
+		},
+		"annotations": [],
+		"lastPublishTime": "2023-06-18T16:16:51Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}
