@@ -1,0 +1,21 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "df-huy-project"
+		},
+		"dfAzureDataLakeGen2_accountKey": {
+			"value": ""
+		},
+		"dfAzureSqlDatabase_connectionString": {
+			"value": ""
+		},
+		"dfAzureSynapseAnalytics_connectionString": {
+			"value": ""
+		},
+		"dfAzureDataLakeGen2_properties_typeProperties_url": {
+			"value": "https://project4storageacc.dfs.core.windows.net/"
+		}
+	}
+}
